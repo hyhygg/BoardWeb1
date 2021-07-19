@@ -8,8 +8,8 @@ import java.sql.ResultSet;
 public class JDBCUtil {
 	public static Connection getConnection() {
 		try {
-			Class.forName("org.h2.Driver");
-			return DriverManager.getConnection("jdbc:h2:tcp://localhost/~/test","sa", "");
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			return DriverManager.getConnection("jdbc:mysql://localhost/studydb?serverTimezone=UTC","study", "study");
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
