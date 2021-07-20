@@ -2,6 +2,8 @@ package com.springbook.biz.board;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 public interface BoardService {
 	
 	// CRUD 기능의 메소드 구현
