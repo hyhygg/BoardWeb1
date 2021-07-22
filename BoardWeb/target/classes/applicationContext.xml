@@ -34,11 +34,17 @@
 		</tx:attributes>
 	</tx:advice>
 	
+	<bean id="around" class="com.springbook.biz.common.AroundAdvice"/>
+	
 	<aop:config>
 		<aop:pointcut id="allPointcut" expression="execution(* com.springbook.biz..*Impl.*(..))" />
 		<aop:pointcut id="getPointcut" expression="execution(* com.springbook.biz..*Impl.get*(..))" />	
 		
-		<aop:advisor pointcut-ref="allPointcut" advice-ref="txAdvice"/>
+		<aop:aspect ref="around">
+			<aop:around pointcut-ref="allPointcut" method="aroundLog"/>
+		</aop:aspect>
+		
+		<!-- <aop:advisor pointcut-ref="allPointcut" advice-ref="txAdvice"/> -->
 	</aop:config>
 	
 	
