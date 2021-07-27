@@ -17,8 +17,9 @@ import com.springbook.biz.board.BoardVO;
 public class BoardDAOSpring extends JdbcDaoSupport {
 		
 		// SQL 명령어들
-		private final String BOARD_INSERT = "insert into board(seq, title, writer, content) "
-				+ "values((select seq from (select IFNULL(max(SEQ), 0)+1 as seq from board) tmp),?,?,?)";	
+//		private final String BOARD_INSERT = "insert into board(seq, title, writer, content) "
+//				+ "values((select seq from (select IFNULL(max(SEQ), 0)+1 as seq from board) tmp),?,?,?)";
+		private final String BOARD_INSERT = "insert into board(seq, title, writer, content) values (?,?,?,?)";	
 		private final String BOARD_UPDATE = "update board set title=?, content=?, writer=? where seq=?";
 		private final String BOARD_DELETE = "delete from board where seq=?";
 		private final String BOARD_GET = "select * from board where seq=?";
@@ -31,10 +32,16 @@ public class BoardDAOSpring extends JdbcDaoSupport {
 		
 		// CRUD 기능의 메소드 구현
 		// 글 등록
-		public void insertBoard(BoardVO vo) {
-			System.out.println("===> Spring JDBC로 insertBoard() 기능 처리");
-			getJdbcTemplate().update(BOARD_INSERT, vo.getTitle(), vo.getWriter(), vo.getContent());
-		}
+//		public void insertBoard(BoardVO vo) {
+//			System.out.println("===> Spring JDBC로 insertBoard() 기능 처리");
+//			getJdbcTemplate().update(BOARD_INSERT, vo.getTitle(), vo.getWriter(), vo.getContent());
+//		}
+		
+		// 글 등록
+				public void insertBoard(BoardVO vo) {
+					System.out.println("===> Spring JDBC로 insertBoard() 기능 처리");
+					getJdbcTemplate().update(BOARD_INSERT, vo.getSeq(), vo.getTitle(), vo.getWriter(), vo.getContent());
+				}
 		
 		// 글 수정
 		public void updateBoard(BoardVO vo) {
