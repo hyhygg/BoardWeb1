@@ -1,52 +1,50 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-
+<%@ page contentType="text/html; charset=EUC-KR"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 						"http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta charset="UTF-8">
-<title>ê¸€ ìƒì„¸</title>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<title>±Û »ó¼¼</title>
 </head>
 <body>
 <center>
-<h1>ê¸€ ìƒì„¸</h1>
+<h1>±Û »ó¼¼</h1>
 <a href="logout.do">Log-out</a>
 <hr>
 <form action="updateBoard.do" method="post">
-<input name="seq" type="hidden" value="${board.seq }" /> <%-- <%= board.getSeq() %> ìë°”ì½”ë“œì— EL ì ìš© --%>
+<input name="seq" type="hidden" value="${board.seq }" /> <%-- <%= board.getSeq() %> ÀÚ¹ÙÄÚµå¿¡ EL Àû¿ë --%>
 <table border="1" cellpadding="0" cellspacing="0">
 	<tr>
-		<td bgcolor="green" width="70">ì œëª©</td>
+		<td bgcolor="green" width="70">Á¦¸ñ</td>
 		<td align="left"><input name="title" type="text" value="${board.title }"/></td>
 	</tr>
 	<tr>
-		<td bgcolor="green">ì‘ì„±ì</td>
+		<td bgcolor="green">ÀÛ¼ºÀÚ</td>
 		<td align="left">${board.writer }</td>
 	</tr>
 	<tr>
-		<td bgcolor="green">ë‚´ìš©</td>
+		<td bgcolor="green">³»¿ë</td>
 		<td align="left"><textarea name="content" cols="40" rows="10">${board.content }</textarea></td>
 	</tr>
 	<tr>
-		<td bgcolor="green">ë“±ë¡ì¼</td>
+		<td bgcolor="green">µî·ÏÀÏ</td>
 		<td align="left">${board.regDate }</td>
 	</tr>
 	<tr>
-		<td bgcolor="green">ì¡°íšŒìˆ˜</td>
+		<td bgcolor="green">Á¶È¸¼ö</td>
 		<td align="left">${board.cnt }</td>
 	</tr>
 	<tr>
 		<td colspan="2" align="center">
-			<input type="submit" value="ê¸€ ìˆ˜ì •"/>
+			<input type="submit" value="±Û ¼öÁ¤"/>
 		</td>
 	</tr>
 </table>
 </form>
 <hr>
-<a href="insertBoard.jsp">ê¸€ë“±ë¡</a>&nbsp;&nbsp;&nbsp;
-<a href="deleteBoard.do?seq=${board.seq }">ê¸€ì‚­ì œ</a>&nbsp;&nbsp;&nbsp;
-<a href="getBoardList.do">ê¸€ëª©ë¡</a>&nbsp;&nbsp;&nbsp;
+<a href="insertBoard.jsp">±Ûµî·Ï</a>&nbsp;&nbsp;&nbsp;
+<a href="deleteBoard.do?seq=${board.seq }">±Û»èÁ¦</a>&nbsp;&nbsp;&nbsp;
+<a href="getBoardList.do">±Û¸ñ·Ï</a>&nbsp;&nbsp;&nbsp;
 </center>
 </body>
 </html>

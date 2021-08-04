@@ -1,42 +1,42 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page contentType="text/html; charset=EUC-KR"%>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
-    
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 						"http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>ê¸€ ëª©ë¡</title>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<title>±Û ¸ñ·Ï</title>
 </head>
 <body>
 <center>
-<h1>ê¸€ ëª©ë¡</h1>
-<h3>í…ŒìŠ¤íŠ¸ë‹˜ í™˜ì˜í•©ë‹ˆë‹¤...<a href="logout.do">Log-out</a></h3>
+<h1>°Ô½Ã±Û ¸ñ·Ï</h1>
+<h3>"${userName}"´Ô! °Ô½ÃÆÇ¿¡ ¿À½Å°É È¯¿µÇÕ´Ï´Ù<a href="logout.do">Log-out</a></h3>
 
-<!-- ê²€ìƒ‰ ì‹œìž‘ -->
-<form action="getBoardList.jsp" method="post">
+<!-- °Ë»ö ½ÃÀÛ -->
+<form action="getBoardList.do" method="post">
 <table border="1" cellpadding="0" cellspacing="0" width="700">
 <tr>
 <td align="right">
 	<select name="searchCondition">
-	<option value="TITLE">ì œëª©
-	<option value="CONTENT">ë‚´ìš©
+	<c:forEach items="${conditionMap}" var="option">
+		<option value="${option.value}">${option.key}
+	</c:forEach>
 	</select>
 	<input name="searchKeyword" type="text" />
-	<input type="submit" value="ê²€ìƒ‰" />
+	<input type="submit" value="°Ë»ö" />
 </td>
 </table>
 </form>
-<!-- ê²€ìƒ‰ ì¢…ë£Œ -->
+<!-- °Ë»ö Á¾·á -->
 
 <table border="1" cellpadding="0" cellspacing="0" width="700">
 <tr>
-	<th bgcolor="yellow" width="100">ë²ˆí˜¸</th>
-	<th bgcolor="yellow" width="200">ì œëª©</th>
-	<th bgcolor="yellow" width="150">ìž‘ì„±ìž</th>
-	<th bgcolor="yellow" width="150">ë“±ë¡ì¼</th>
-	<th bgcolor="yellow" width="100">ì¡°íšŒìˆ˜</th>
+	<th bgcolor="yellow" width="100">¹øÈ£</th>
+	<th bgcolor="yellow" width="200">Á¦¸ñ</th>
+	<th bgcolor="yellow" width="150">ÀÛ¼ºÀÚ</th>
+	<th bgcolor="yellow" width="150">µî·ÏÀÏ</th>
+	<th bgcolor="yellow" width="100">Á¶È¸¼ö</th>
 </tr>
 
 <c:forEach items="${boardList}" var="board">
@@ -51,7 +51,7 @@
 
 </table>
 <br>
-<a href="insertBoard.jsp">ìƒˆê¸€ ë“±ë¡</a>
+<a href="insertBoard.jsp">»õ±Û µî·Ï</a>
 </center>
 </body>
 </html>
