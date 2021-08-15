@@ -26,4 +26,10 @@ Spring MVC 구조, 적용
 - 다른 시스템과 데이터 교환 시 변환
 - <mvc:annotation-driven> 설정 : 자바객체를 JSON 응답보디 변환 클래스 / XML 응답보디 변환 클래스 같이 등록해줌
 - JAXB2 API는 Java6 ~ Java8까지는 지원됨 -> Java 10 부터는 자동 지원 안됨 -> 따로 설치 필요(pom.xml에 Jaxb 관련 설정 추가*) -> xml 변환 완료
-  
+
+Mybatis 프레임워크 환경설정 후 구현
+- Mybatis 프레임워크 특징 2가지
+  1. 한두 줄의 자바 코드로 DB 연동 로직을 처리한다는 것
+  XML 파일에 저장된 SQL 명령어를 대신 실행하고 실행 결과를 VO 같은 자바 객체에 자동으로 매핑(데이터 맵퍼 Data Mapper)
+  둘째, SQL 명령어를 자바 코드에서 분리하여 XML 파일에 따로 관리한다는 것
+  SQL 명령어에 대한 통합 관리 필요 / SQL Mapper XML 파일 : DB연동에 필요한 SQL 명령어 저장(Mybatis에서 가장 중요한 파일)
