@@ -31,7 +31,7 @@
     		<groupId>mysql</groupId>
     		<artifactId>mysql-connector-java</artifactId>
    			<version>8.0.11</version>
-	</dependency>
+		</dependency>
 
 		<!-- h2 Driver -->
 		<dependency>
