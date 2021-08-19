@@ -8,7 +8,6 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlTransient;
 
 import org.springframework.web.multipart.MultipartFile;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 // VO(Value Object)
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -20,13 +19,14 @@ public class BoardVO {
 	private String content;
 	private Date regDate;
 	private int cnt;
-	@XmlTransient //XML 변환에서 제외하라는 의미 (= JSON변환에서 @JsonIgnore)
+	@XmlTransient
 	private String searchCondition;
 	@XmlTransient
 	private String searchKeyword;
 	@XmlTransient
 	private MultipartFile uploadFile;
 	
+	// Getter/Setter 메소드
 	public int getSeq() {
 		return seq;
 	}
